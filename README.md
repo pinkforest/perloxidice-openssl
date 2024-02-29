@@ -9,6 +9,7 @@ It's a mess atm.
 ## Bootstrap
 
 $ git clone https://github.com/openssl/openssl.git
+
 $ git clone https://github.com/dot-asm/cryptogams.git
 
 ## build.infos
@@ -22,6 +23,7 @@ This can be used to source analyze the perl etc. beyond just running it w/ build
 ## LLVM IR
 
 $ clang -I../../include -c -emit-llvm sha512.c -o sha512.bc
+
 $ cargo run openssl-llvm-ir -- openssl/crypto/sha/sha512.bc
 
 ```
