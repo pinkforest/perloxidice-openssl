@@ -1,4 +1,4 @@
-# CURSED-PERL
+# perloxcidise OpenSSL
 
 I'm wanting to see if I could transform / analyze OpenSSL + cryptograms codebase to transpile bits of it to Rust
 
@@ -24,6 +24,7 @@ This can be used to source analyze the perl etc. beyond just running it w/ build
 $ clang -I../../include -c -emit-llvm sha512.c -o sha512.bc
 $ cargo run openssl-llvm-ir -- openssl/crypto/sha/sha512.bc
 
+```
      Running `target/debug/openssl-llvm-ir openssl-llvm-ir`
 ===== llvm_ir::Module
 name             = /home/foobar/code/cursed-perl/openssl/crypto/sha/sha512.bc
@@ -70,12 +71,15 @@ target_triple    = x86_64-unknown-linux-gnu
   <<< preds = []
   --> succs = ["Return"]
   <== preds_of_return = ["Number(2)"]
+```
 
 ## ELF objdump
 
 $ gcc -I../../include -c sha512.c -o sha512.o
 $ objdump -t sha512.o 
 
+sha512 ELF
+```
 sha512.o:     file format elf64-x86-64
 
 SYMBOL TABLE:
@@ -96,8 +100,10 @@ SYMBOL TABLE:
 0000000000000c75 g     F .text	000000000000002d SHA384_Update
 0000000000000ca2 g     F .text	000000000000002b SHA512_Transform
 0000000000000000         *UND*	0000000000000000 __stack_chk_fail
+```
 
-
+conf files & tpl
+```
 $ find . -type f -name \*.conf
 ./Configurations/00-base-templates.conf
 ./Configurations/10-main.conf
@@ -116,9 +122,10 @@ $ find . -type f -name \*.conf
 
 $ Configurations/unix-Makefile.tmpl
 $ Configurations/windows-makefile.tmpl
+```
 
-
-
+conf desc for build.info
+```
 .conf ->
 
     asm_arch        => The architecture to be used for compiling assembly
@@ -130,3 +137,4 @@ $ Configurations/windows-makefile.tmpl
                        assembler source.
     perlasm_scheme  => The perlasm method used to create the
                        assembler files used when compiling with
+```
