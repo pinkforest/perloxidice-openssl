@@ -35,6 +35,14 @@ We already have FFI IR - we should probably reflect the associated C source so i
 
 TBD
 
+### Discrete Event Simulation
+
+Experiment if we create contextual tests whether this can be used to create higher level Rust types.
+
+To enable migration relevant C to higher level Rust potentially perhaps.
+
+Simulating tests would allow us to see what does goes input/output in relation to state / context that could reflect logically discrete generated crates.
+
 ## What can rustc tell us ?
 
 ```
