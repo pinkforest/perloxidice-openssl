@@ -19,7 +19,7 @@
 
 ## What we need ?
 
-### Record openssl <> openssl-sys
+### Record `openssl` <> `openssl-sys`
 
 We need to generate a recorder proxy crate `ffi-record-openssl-sys`
 
@@ -35,13 +35,13 @@ We already have FFI IR - we should probably reflect the associated C source so i
 
 TBD
 
-### Discrete Event Simulation
+### Generate higher level Rust types
 
-Experiment if we create contextual tests whether this can be used to create higher level Rust types.
+Experiment if we create contextual tests and whether this can be used to create higher level Rust types to replace interface/s.
 
-To enable migration relevant C to higher level Rust potentially perhaps.
+This could enable migration relevant C to higher level Rust potentially perhaps and split up large C codebases into smaller Rust ones.
 
-Simulating tests would allow us to see what does goes input/output in relation to state / context that could reflect logically discrete generated crates.
+Simulating tests would allow us to see what the input/output is in given relevant state / context - which then could reflect the logically discrete generated Rust crates + types.
 
 ## What can rustc tell us ?
 
