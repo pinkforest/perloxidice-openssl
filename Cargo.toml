@@ -1,4 +1,7 @@
 [workspace]
-members = ["openssl-llvm-ir"]
+members = [
+"injection-shenanigans/ffi-record-openssl-sys",
+"injection-shenanigans/test-record-1",
+"openssl-llvm-ir"]
 
 resolver = "2"
