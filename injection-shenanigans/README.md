@@ -17,6 +17,24 @@
 
 ```
 
+## What we need ?
+
+### Record openssl <> openssl-sys
+
+We need to generate a recorder proxy crate `ffi-record-openssl-sys`
+
+And `openssl` needs to redirect via `ffi-record-openssl-sys` to `openssl-sys`.
+
+`ffi-record-openssl-sys` crate needs to reflect `openssl-sys` whilst recording everything between.
+
+Experiment with `[build-dependencies]` that builds the `ffi-record-openssl-sys` from `openssl-sys` transparently.
+
+### Record `openssl-sys` <> `openssl-c`
+
+We already have FFI IR - we should probably reflect the associated C source so it can be annotated to inline asm.
+
+TBD
+
 ## What can rustc tell us ?
 
 ```
